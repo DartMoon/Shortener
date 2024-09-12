@@ -20,6 +20,9 @@ importers:
       '@nextui-org/react':
         specifier: ^2.4.6
         version: 2.4.6(@types/react@18.3.5)(framer-motion@11.5.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(tailwindcss@3.4.10)
+      '@nextui-org/snippet':
+        specifier: ^2.0.41
+        version: 2.0.41(@nextui-org/system@2.2.5(@nextui-org/theme@2.2.9(tailwindcss@3.4.10))(framer-motion@11.5.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@nextui-org/theme@2.2.9(tailwindcss@3.4.10))(framer-motion@11.5.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@nextui-org/spinner':
         specifier: ^2.0.33
         version: 2.0.33(@nextui-org/theme@2.2.9(tailwindcss@3.4.10))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -4479,7 +4482,7 @@ snapshots:
   '@react-aria/dialog@3.5.14(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@react-aria/focus': 3.18.2(react@18.3.1)
-      '@react-aria/overlays': 3.22.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@react-aria/overlays': 3.23.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@react-aria/utils': 3.25.2(react@18.3.1)
       '@react-types/dialog': 3.5.12(react@18.3.1)
       '@react-types/shared': 3.24.1(react@18.3.1)
@@ -5045,7 +5048,7 @@ snapshots:
   '@react-stately/overlays@3.6.7(react@18.3.1)':
     dependencies:
       '@react-stately/utils': 3.10.3(react@18.3.1)
-      '@react-types/overlays': 3.8.7(react@18.3.1)
+      '@react-types/overlays': 3.8.9(react@18.3.1)
       '@swc/helpers': 0.5.5
       react: 18.3.1
 
@@ -5331,7 +5334,7 @@ snapshots:
 
   '@react-types/tooltip@3.4.9(react@18.3.1)':
     dependencies:
-      '@react-types/overlays': 3.8.7(react@18.3.1)
+      '@react-types/overlays': 3.8.9(react@18.3.1)
       '@react-types/shared': 3.24.1(react@18.3.1)
       react: 18.3.1
 

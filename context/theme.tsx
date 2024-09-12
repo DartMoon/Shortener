@@ -12,7 +12,7 @@ const ThemeContext = createContext<ThemeContextType>({
   changeThemeMode: () => {},
 });
 
-export const ThemeProvider = ({ children }: Props) => {
+export const ThemeProvider = ({ children }: Readonly<Props>) => {
   const [themeMode, setThemeMode] = useState<ThemeType>(initialTheme);
   const changeThemeMode = () => {
     const newMode = themeMode === THEME_MODE.dark ? THEME_MODE.light : THEME_MODE.dark;

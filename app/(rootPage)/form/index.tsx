@@ -1,13 +1,16 @@
 'use client';
 
 import Button from '@/components/button';
+import Snippet from '@/components/snippet';
+import { useShortenerContext } from '@/context/store';
 import TextField from '@/components/hook-form/text-field';
 import FormProvider from '@/components/hook-form/form-provider';
 
 import useSimplifyForm from '../hooks/use-simplify-form';
 
 const SimplifyForm = () => {
-  const { methods, onSubmitHandler, isDisabled, isLoading, isSubmitSuccessful } = useSimplifyForm();
+  const { onCopyHandler, methods, onSubmitHandler, isDisabled, isLoading } = useSimplifyForm();
+  const { value, errorMsg } = useShortenerContext();
 
   return (
     <div className="w-full">
@@ -28,10 +31,16 @@ const SimplifyForm = () => {
           />
         </div>
       </FormProvider>
-      {isSubmitSuccessful && (
-        <p className="mt-4 text-center text-green-500">
-          The link has been generated and copied! :)
-        </p>
+      {errorMsg && <p className="mt-4 text-center text-red-600">{errorMsg}</p>}
+      {value && (
+        <Snippet
+          onCopy={onCopyHandler}
+          className="mt-4 w-full"
+          value={value}
+          tooltipProps={{
+            content: 'After copying, the form will be updated!',
+          }}
+        />
       )}
     </div>
   );
