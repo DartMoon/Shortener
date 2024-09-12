@@ -8,7 +8,7 @@ type Props = InputProps & {
   className?: string;
 };
 
-const TextField = ({ name, type, placeholder, ...other }: Props) => {
+const TextField = ({ name, placeholder, ...other }: Props) => {
   const { control } = useFormContext();
 
   return (
