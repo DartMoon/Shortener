@@ -1,26 +1,23 @@
-import { ReactNode } from 'react';
-import type { Metadata } from 'next';
-import Header from '@/components/header';
-import Footer from '@/components/footer';
-import { METADATA } from '@/constants/metadata';
 import '@/styles/global.css';
+import { Metadata } from 'next';
+import { ReactNode } from 'react';
+import { METADATA } from '@/constants/metadata';
 
+import RootPage from './(rootPage)';
 import { Providers } from './providers';
 
 type Props = { children: ReactNode };
 
-export const metadata: Metadata = METADATA.root;
+export const metadata: Metadata = {
+  ...METADATA.root,
+};
 
 export default function RootLayout({ children }: Readonly<Props>) {
   return (
     <html lang="en">
-      <body className="bg-background text-foreground dark">
+      <body>
         <Providers>
-          <div className="flex h-screen flex-col">
-            <Header />
-            <main className="general_padding flex h-full flex-col justify-center">{children}</main>
-            <Footer />
-          </div>
+          <RootPage>{children}</RootPage>
         </Providers>
       </body>
     </html>

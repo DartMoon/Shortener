@@ -1,5 +1,7 @@
 import type { Config } from 'tailwindcss';
+const plugin = require('tailwindcss/plugin');
 const { nextui } = require('@nextui-org/react');
+import { PluginAPI } from 'tailwindcss/types/config';
 
 const config: Config = {
   content: [
@@ -13,6 +15,13 @@ const config: Config = {
   theme: {
     extend: {},
   },
-  plugins: [nextui()],
+  plugins: [
+    nextui(),
+    plugin(function ({ addBase, theme }: PluginAPI) {
+      addBase({
+        h1: { fontSize: theme('fontSize.2xl') },
+      });
+    }),
+  ],
 };
 export default config;
