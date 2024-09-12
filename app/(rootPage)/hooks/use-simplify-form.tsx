@@ -19,6 +19,7 @@ const useSimplifyForm = () => {
   const onSubmitHandler = handleSubmit(async (formData) => {
     try {
       const res = await API.createShortLink({ long_url: formData.destination });
+
       if (res.short_url) {
         navigator.clipboard.writeText(res.short_url);
       }

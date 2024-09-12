@@ -5,11 +5,13 @@ import { useState, ReactNode, useEffect, useContext, createContext } from 'react
 type ThemeContextType = { themeMode: ThemeType; changeThemeMode: () => void };
 type Props = { children: ReactNode };
 
-const initialTheme: ThemeType = storage.get('themeMode') ?? THEME_MODE.light;
+const initialTheme: ThemeType = THEME_MODE.light;
+
 const ThemeContext = createContext<ThemeContextType>({
   themeMode: initialTheme,
   changeThemeMode: () => {},
 });
+
 export const ThemeProvider = ({ children }: Props) => {
   const [themeMode, setThemeMode] = useState<ThemeType>(initialTheme);
   const changeThemeMode = () => {
@@ -20,8 +22,12 @@ export const ThemeProvider = ({ children }: Props) => {
   };
 
   useEffect(() => {
-    storage.set('themeMode', initialTheme);
-    setThemeMode(initialTheme);
+    const savedMode = storage.get('themeMode');
+
+    if (savedMode) {
+      storage.set('themeMode', savedMode);
+      setThemeMode(savedMode);
+    }
   }, []);
 
   return (

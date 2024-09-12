@@ -17,7 +17,10 @@ const Header = () => {
       <Link href={paths.root}>
         <Image width={32} height={32} src={`/assets/images/logo_${themeMode}.svg`} alt="logo" />
       </Link>
-      <Switcher defaultSelected={isSelected} text="Theme mode" onChange={themeHandler} />
+      {/*TODO find solution to rerender component in right way*/}
+      <div key={themeMode}>
+        <Switcher defaultSelected={isSelected} text="Theme mode" onChange={themeHandler} />
+      </div>
     </header>
   );
 };
