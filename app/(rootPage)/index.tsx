@@ -10,9 +10,9 @@ const RootPage = ({ children }: Readonly<Props>) => {
   const { themeMode } = useTheme();
 
   return (
-    <div className={`flex h-screen flex-col bg-background text-foreground ${themeMode}`}>
+    <div className={`flex min-h-screen flex-col bg-background text-foreground ${themeMode}`}>
       <Header />
-      <main className="general_padding flex h-full flex-col justify-center">{children}</main>
+      <main className="general_padding m-auto flex flex-col justify-center">{children}</main>
       <Footer />
     </div>
   );

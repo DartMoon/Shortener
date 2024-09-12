@@ -5,6 +5,7 @@ import { Controller, useFormContext } from 'react-hook-form';
 type Props = InputProps & {
   name: string;
   placeholder: string;
+  className?: string;
 };
 
 const TextField = ({ name, type, placeholder, ...other }: Props) => {
@@ -14,7 +15,7 @@ const TextField = ({ name, type, placeholder, ...other }: Props) => {
     <Controller
       name={name}
       control={control}
-      render={({ field, fieldState: { error }, ...rest }) => (
+      render={({ field, fieldState: { error } }) => (
         <Input
           onChange={(event) => {
             field.onChange(event.target.value);

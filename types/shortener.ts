@@ -1,41 +1,22 @@
-export type ShortenerReq = {
-  destination: string;
+export type ShortenerPayload = {
+  long_url: string;
 };
 
 export type ShortenerRes = {
-  id: string;
-  title: string;
-  slashtag: string;
-  destination: string;
-  createdAt: string;
-  updatedAt: string;
-  expiredAt: null | string;
-  status: string;
-  tags: Array<any>;
-  linkType: string;
-  clicks: number;
-  isPublic: boolean;
-  shortUrl: string;
-  domainId: string;
-  domainName: string;
-  domain: {
-    id: string;
-    ref: string;
-    fullName: string;
-    sharing: {
-      protocol: {
-        allowed: Array<string>;
-        default: string;
-      };
-    };
-    active: boolean;
+  short_url: string;
+  description: null | string;
+  long_url: string;
+  domain: string;
+  short_id: string;
+  expire_at_views: null | string;
+  expire_at_datetime: null | string;
+  public_stats: boolean;
+  created_at: string;
+  updated_at: string;
+  meta: {
+    smart_urls: Array<{
+      type: string;
+      url: string;
+    }>;
   };
-  https: boolean;
-  favourite: boolean;
-  creator: {
-    id: string;
-    fullName: string;
-    avatarUrl: string;
-  };
-  integrated: boolean;
 };

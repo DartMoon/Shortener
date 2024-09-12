@@ -8,7 +8,7 @@ const PrivacyPolicyPage = () => {
 
   return (
     <section className="flex flex-col items-center">
-      <p className="mb-8 text-center">Soon...</p>
+      <p className="mb-8 text-center">Coming soon...</p>
       <Button text="Go back" className="w-24" onClick={() => goBack()} />
     </section>
   );

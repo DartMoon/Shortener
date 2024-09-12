@@ -5,7 +5,7 @@ import { paths } from '@/routes/path';
 const Footer = () => {
   return (
     <footer className="general_padding mt-auto">
-      <div className="mb-6 sm:mb-0 sm:flex sm:justify-between">
+      <div className="mb-6 flex justify-between sm:mb-0">
         <p>Copyright © 2024</p>
         <p>
           <Link href={paths.privacyPolicy}>Privacy/Policy</Link>

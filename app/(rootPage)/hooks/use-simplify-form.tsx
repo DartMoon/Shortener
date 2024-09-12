@@ -1,3 +1,4 @@
+import { API } from '@/api/api';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 
@@ -12,23 +13,23 @@ const useSimplifyForm = () => {
 
   const {
     handleSubmit,
-    formState: { isSubmitting, isValid },
+    formState: { isSubmitting, isValid, isSubmitSuccessful },
   } = methods;
 
-  const onSubmitHandler = handleSubmit(async (values) => {
-    console.log(values);
-
-    const res = await fetch('https://api.rebrandly.com/v1/links', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        // apikey: process.env.API_KEY as string,
-        apikey: '104fbb409abd4772a8dd3b24a1248554',
-      },
-      body: JSON.stringify({ destination: values.url }),
-    });
-
-    console.log(res);
+  const onSubmitHandler = handleSubmit(async (formData) => {
+    try {
+      const res = await API.createShortLink({ long_url: formData.destination });
+      if (res.short_url) {
+        navigator.clipboard.writeText(res.short_url);
+      }
+    } catch {
+      //  Logic to handle error
+    } finally {
+      // Emulate to handle notification
+      setTimeout(() => {
+        methods.reset();
+      }, 3000);
+    }
   });
 
   return {
@@ -36,6 +37,7 @@ const useSimplifyForm = () => {
     onSubmitHandler,
     isDisabled: !isValid,
     isLoading: isSubmitting,
+    isSubmitSuccessful: isSubmitSuccessful,
   };
 };
 

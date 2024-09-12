@@ -7,9 +7,10 @@ type Props = {
   placeholder: string;
   error?: FieldError;
   onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
+  className?: string;
 };
 
-const Input = ({ value, placeholder, onChange, error }: Props) => {
+const Input = ({ value, placeholder, onChange, error, className }: Props) => {
   return (
     <InputUi
       value={value}
@@ -17,6 +18,7 @@ const Input = ({ value, placeholder, onChange, error }: Props) => {
       onChange={onChange}
       isInvalid={!!error}
       errorMessage={!!error && error.message}
+      className={className}
     />
   );
 };

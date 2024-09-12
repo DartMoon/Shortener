@@ -4,4 +4,8 @@ export const METADATA = {
     description:
       'Carry big links in your pocket with Shortener, the URL minimizer. This app transforms cumbersome URLs into compact versions ideal for sharing and saving space. Navigate the web smoothly with Shortener',
   },
+  privacy: {
+    title: 'Privacy/Policy',
+    description: 'Coming soon...',
+  },
 } as const;

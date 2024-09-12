@@ -1,13 +1,13 @@
 import * as yup from 'yup';
 
 export type FormValues = {
-  url: string;
+  destination: string;
 };
 
 export const defaultValues = {
-  url: '',
+  destination: '',
 };
 
 export const schema = yup.object().shape({
-  url: yup.string().url('Should be URL link').required('URL field is required'),
+  destination: yup.string().url('Should be URL link').required('URL field is required'),
 });

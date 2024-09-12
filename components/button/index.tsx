@@ -7,12 +7,12 @@ type Props = {
   className?: string;
   isDisabled?: boolean;
   isLoading?: boolean;
-  color: 'default' | 'primary';
+  color?: 'default' | 'primary';
 };
 
 const Button = ({
   type = 'button',
-  color = 'default',
+  color = 'primary',
   text,
   onClick,
   className,
@@ -22,7 +22,7 @@ const Button = ({
   return (
     <ButtonUi
       type={type}
-      className={className}
+      className={`font-medium ${className}`}
       onClick={() => {
         onClick && onClick();
       }}
