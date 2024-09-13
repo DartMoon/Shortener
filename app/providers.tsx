@@ -2,7 +2,8 @@
 import { ReactNode } from 'react';
 import { ThemeProvider } from '@/context/theme';
 import { NextUIProvider } from '@nextui-org/react';
-import { ShortenerProvider } from '@/context/store';
+
+import { ShortenerProvider } from './feature/form/store';
 
 type Props = { children: ReactNode };
 

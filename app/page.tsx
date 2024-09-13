@@ -1,4 +1,4 @@
-import SimplifyForm from './(rootPage)/form';
+import SimplifyForm from '@/app/feature/form';
 
 const RootPage = () => {
   return (

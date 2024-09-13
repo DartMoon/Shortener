@@ -2,11 +2,11 @@
 
 import Button from '@/components/button';
 import Snippet from '@/components/snippet';
-import { useShortenerContext } from '@/context/store';
 import TextField from '@/components/hook-form/text-field';
+import { useShortenerContext } from '@/app/feature/form/store';
 import FormProvider from '@/components/hook-form/form-provider';
 
-import useSimplifyForm from '../hooks/use-simplify-form';
+import useSimplifyForm from './use-simplify-form';
 
 const SimplifyForm = () => {
   const { onCopyHandler, methods, onSubmitHandler, isDisabled, isLoading } = useSimplifyForm();

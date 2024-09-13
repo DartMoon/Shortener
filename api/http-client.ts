@@ -1,7 +1,7 @@
 import { API_KEY, API_URL } from '@/config-global';
 import axios, { AxiosError, AxiosInstance, AxiosRequestConfig } from 'axios';
 
-export class HttpClient {
+class HttpClient {
   constructor(private axiosInstance: AxiosInstance) {
     this.axiosInstance.interceptors.request.use((config) => {
       const token = API_KEY;
@@ -26,7 +26,7 @@ export class HttpClient {
   }
 }
 
-export const axiosInstance = axios.create({
+const axiosInstance = axios.create({
   baseURL: API_URL,
 });
 

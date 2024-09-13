@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { paths } from '@/routes/path';
+import { paths } from '@/routes/paths';
 
 const Footer = () => {
   return (

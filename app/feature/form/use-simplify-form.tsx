@@ -1,9 +1,9 @@
 import { API } from '@/api/api';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { useShortenerContext } from '@/context/store';
+import { useShortenerContext } from '@/app/feature/form/store';
 
-import { schema, FormValues, defaultValues } from '../form/schema';
+import { schema, FormValues, defaultValues } from './schema';
 
 const useSimplifyForm = () => {
   const { setValue, setError, reset } = useShortenerContext();

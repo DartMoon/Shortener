@@ -3,7 +3,7 @@ import { Metadata } from 'next';
 import { ReactNode } from 'react';
 import { METADATA } from '@/constants/metadata';
 
-import RootPage from './(rootPage)';
+import RootPage from './index';
 import { Providers } from './providers';
 
 type Props = { children: ReactNode };

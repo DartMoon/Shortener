@@ -13,7 +13,7 @@
     "lint:prettier": "pnpm lint:fix && pnpm prettier",
     "re:start": "pnpm rm:all && pnpm install && pnpm run dev",
     "re:build": "pnpm rm:all && pnpm install && pnpm build",
-    "prepare": "husky install"
+    "prepare": "husky"
   },
   "lint-staged": {
     "app/**/*.{js,jsx,ts,tsx}": [
